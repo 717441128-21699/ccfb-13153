@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>拉班舞谱三维工作室 · Labanotation Studio</title>
+  </head>
+  <body>
+    <div id="app">
+      <header class="topbar">
+        <h1>拉班舞谱三维工作室</h1>
+        <span class="sub">竖谱编辑 · 三维人体动画 · 逆向记谱（TypeScript + WebGL2）</span>
+        <span style="flex: 1"></span>
+        <button id="reset-view" class="tiny">谱面回到底部</button>
+        <button id="delete-symbol" class="tiny danger">删除选中符号</button>
+      </header>
+
+      <!-- 左栏：符号面板与列选择 -->
+      <aside class="panel left">
+        <div id="palette"></div>
+        <div id="columns"></div>
+      </aside>
+
+      <!-- 中央：三维舞台 + 竖谱编辑器 -->
+      <main class="center">
+        <div class="stage-wrap">
+          <canvas id="stage-canvas"></canvas>
+          <div id="playback"></div>
+        </div>
+        <div class="staff-wrap">
+          <canvas id="staff-canvas"></canvas>
+          <div class="staff-hint">谱面自下而上阅读 · 点击空格放置符号 · 拖动符号顶部手柄拉长（持续拍数）· 滚轮纵向滚动</div>
+        </div>
+      </main>
+
+      <!-- 右栏：舞者、逆向、指标 -->
+      <aside class="panel right">
+        <div id="dancers"></div>
+        <div id="inverse"></div>
+        <div id="stats"></div>
+      </aside>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
